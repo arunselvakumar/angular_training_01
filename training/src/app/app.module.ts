@@ -11,6 +11,7 @@ import { VoterComponent } from './components/voter/voter.component';
 import { BackgroundColorDirective } from './directives/background-color/background-color.directive';
 import { CreditCardDirective } from './directives/credit-card/credit-card.directive';
 import { FormComponent } from './components/form/form.component';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormComponent } from './components/form/form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
