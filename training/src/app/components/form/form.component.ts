@@ -27,7 +27,7 @@ export class FormComponent implements OnInit {
   saveBookDetails(ngForm: NgForm) {
     if (ngForm.value) {
       this.bookStoreDbService.saveBookDetails(ngForm.value)
-        .subscribe(data => console.log('hi', data));
+                             .subscribe(data => console.log(data));
     }
   }
 }
