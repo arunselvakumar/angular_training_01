@@ -15,6 +15,8 @@ export class FormComponent implements OnInit {
     author: 'George RR Martin'
   };
 
+  dataFromServer: any;
+
   constructor(private readonly bookStoreDbService: BookStoreDbService) { }
 
   ngOnInit() {
@@ -22,7 +24,7 @@ export class FormComponent implements OnInit {
 
   loadBookDetails() {
     this.bookStoreDbService.loadBookDetails()
-                           .subscribe(data => console.log(data));
+                           .subscribe(data => { console.log(data); this.dataFromServer = data; });
   }
 
   saveBookDetails(ngForm: NgForm) {
