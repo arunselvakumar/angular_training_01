@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-book-details',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookDetailsComponent implements OnInit {
 
+  @Input()
+  mydata: string;
+
+  @Output()
+  eventHandler = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  callme() {
+    console.log('I am Called');
+    this.eventHandler.emit({currentValue: 'clicked'});
   }
 
 }

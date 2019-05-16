@@ -9,9 +9,14 @@ export class BookStoreComponent implements OnInit {
 
   imageUrl: string;
 
+  greetings = 'Hello World';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  eventListener(args: any){
+    console.log(args)
+  }
 }
