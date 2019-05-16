@@ -8,6 +8,7 @@ import { BookStoreListComponent } from './components/book-store/book-store-list/
 import { BookDetailsComponent } from './components/book-store/book-details/book-details.component';
 import {FormsModule} from '@angular/forms';
 import { VoterComponent } from './components/voter/voter.component';
+import { BackgroundColorDirective } from './directives/background-color.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { VoterComponent } from './components/voter/voter.component';
     BookStoreComponent,
     BookStoreListComponent,
     BookDetailsComponent,
-    VoterComponent
+    VoterComponent,
+    BackgroundColorDirective
   ],
   imports: [
     BrowserModule,

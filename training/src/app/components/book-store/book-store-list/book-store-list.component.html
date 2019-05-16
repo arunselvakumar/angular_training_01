@@ -1,6 +1,6 @@
 <ng-template [ngIf]="bookList && bookList.length > 0" [ngIfElse]="noRecordsFound">
   <ul>
-    <li *ngFor="let book of bookList"  [ngStyle]="{'color':getColor(book.availability)}">
+    <li *ngFor="let book of bookList"  [ngStyle]="{'color':getColor(book.availability)}" appBackgroundColor>
       {{book.title}}
     </li>
   </ul>
