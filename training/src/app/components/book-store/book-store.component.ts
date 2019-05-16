@@ -17,6 +17,6 @@ export class BookStoreComponent implements OnInit {
   }
 
   eventListener(args: any){
-    console.log(args)
+    console.log(args);
   }
 }

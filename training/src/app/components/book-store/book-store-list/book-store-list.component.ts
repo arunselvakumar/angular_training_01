@@ -17,4 +17,12 @@ export class BookStoreListComponent implements OnInit {
     this.bookList = this.bookStoreService.getBookList();
   }
 
+  getColor(availability: string) {
+    if (availability === 'available') {
+      return 'green';
+    }
+
+    return 'red';
+  }
+
 }

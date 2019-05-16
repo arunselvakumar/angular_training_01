@@ -10,9 +10,11 @@ export class BookStoreService {
 
   getBookList(): BookModel[] {
     const bookList = [
-      { author: 'Marcel Proust', title: 'In Search Of Lost Time' },
-      { author: 'Miguel de Cervantes', title: 'Don Quixote' },
-      { author: 'James Joyce', title: 'Ulysses' },
+      { author: 'Marcel Proust', title: 'In Search Of Lost Time', availability: 'available' },
+      { author: 'Miguel de Cervantes', title: 'Don Quixote' , availability: 'available' },
+      { author: 'James Joyce', title: 'Ulysses Part I' , availability: 'not-available' },
+      { author: 'James Joyce', title: 'Ulysses Part II' , availability: 'available' },
+      { author: 'James Joyce', title: 'Ulysses Part III' , availability: 'not-available' },
    ];
     return bookList;
   }
