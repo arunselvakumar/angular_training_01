@@ -11,7 +11,8 @@ export class BookStoreDbService {
   constructor(private http: Http) { }
 
   loadBookDetails() {
-
+    return this.http.get('https://taskmanager-25b59.firebaseio.com/mf.json')
+                    .map((response: Response) => response.json());
   }
 
   saveBookDetails(bookDetails: any) {

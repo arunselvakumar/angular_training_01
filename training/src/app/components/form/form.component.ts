@@ -21,7 +21,8 @@ export class FormComponent implements OnInit {
   }
 
   loadBookDetails() {
-    this.bookStoreDbService.loadBookDetails();
+    this.bookStoreDbService.loadBookDetails()
+                           .subscribe(data => console.log(data));
   }
 
   saveBookDetails(ngForm: NgForm) {
