@@ -4,7 +4,7 @@ import {Directive, HostBinding, HostListener} from '@angular/core';
   selector: '[appBackgroundColor]'
 })
 export class BackgroundColorDirective {
-  private defaultStyle = 'blue';
+  private defaultStyle = 'transparent';
 
   @HostListener('mouseenter')
   public addStyle() {
@@ -13,7 +13,7 @@ export class BackgroundColorDirective {
 
   @HostListener('mouseleave')
   public removeStyle() {
-    this.defaultStyle = 'blue';
+    this.defaultStyle = 'transparent';
   }
 
   @HostBinding('style.backgroundColor')
