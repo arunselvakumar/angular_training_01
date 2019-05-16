@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookStoreComponent implements OnInit {
 
+  imageUrl: string;
+
   constructor() { }
 
   ngOnInit() {
