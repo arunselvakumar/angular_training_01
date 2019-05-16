@@ -1,5 +1,11 @@
-<ul>
-  <li *ngFor="let book of bookList">
-    {{book.title}}
-  </li>
-</ul>
+<ng-template [ngIf]="bookList && bookList.length > 0" [ngIfElse]="noRecordsFound">
+  <ul>
+    <li *ngFor="let book of bookList">
+      {{book.title}}
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #noRecordsFound>
+  <section>No Records Found!</section>
+</ng-template>
