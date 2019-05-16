@@ -8,7 +8,8 @@ import { BookStoreListComponent } from './components/book-store/book-store-list/
 import { BookDetailsComponent } from './components/book-store/book-details/book-details.component';
 import {FormsModule} from '@angular/forms';
 import { VoterComponent } from './components/voter/voter.component';
-import { BackgroundColorDirective } from './directives/background-color.directive';
+import { BackgroundColorDirective } from './directives/background-color/background-color.directive';
+import { CreditCardDirective } from './directives/credit-card/credit-card.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BackgroundColorDirective } from './directives/background-color.directiv
     BookStoreListComponent,
     BookDetailsComponent,
     VoterComponent,
-    BackgroundColorDirective
+    BackgroundColorDirective,
+    CreditCardDirective
   ],
   imports: [
     BrowserModule,
