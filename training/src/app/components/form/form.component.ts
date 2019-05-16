@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {BookStoreDbService} from '../../services/book-store-db.service';
 
 @Component({
   selector: 'app-form',
@@ -14,12 +15,18 @@ export class FormComponent implements OnInit {
     author: 'George RR Martin'
   };
 
-  constructor() { }
+  constructor(private readonly bookStoreDbService: BookStoreDbService) { }
 
   ngOnInit() {
   }
 
-  saveDetails(ngForm: NgForm) {
-    console.log(ngForm.value);
+  loadBookDetails() {
+    this.bookStoreDbService.loadBookDetails();
+  }
+
+  saveBookDetails(ngForm: NgForm) {
+    if (ngForm.value) {
+      this.bookStoreDbService.saveBookDetails(ngForm.value);
+    }
   }
 }

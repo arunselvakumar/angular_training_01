@@ -1,5 +1,5 @@
 
-<form (ngSubmit)="saveDetails(ngForm)" #ngForm=ngForm autocomplete="off">
+<form (ngSubmit)="saveBookDetails(ngForm)" #ngForm=ngForm autocomplete="off">
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" [(ngModel)]="defaultBookDetails.title" name="title" placeholder="Enter book title" required #n=ngModel>
