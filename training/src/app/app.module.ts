@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import { VoterComponent } from './components/voter/voter.component';
 import { BackgroundColorDirective } from './directives/background-color/background-color.directive';
 import { CreditCardDirective } from './directives/credit-card/credit-card.directive';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreditCardDirective } from './directives/credit-card/credit-card.direct
     BookDetailsComponent,
     VoterComponent,
     BackgroundColorDirective,
-    CreditCardDirective
+    CreditCardDirective,
+    FormComponent
   ],
   imports: [
     BrowserModule,
