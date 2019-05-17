@@ -10,11 +10,12 @@ export class UserService {
   constructor(private readonly httpClient: HttpClient) { }
 
   createUser(payload: UserModel) {
+    const url = 'api/users';
     const httpHeaders = new HttpHeaders()
                             .set('Content-Type', 'application/json');
     const options = { headers: httpHeaders };
 
-    return this.httpClient.post<UserModel>(this.url, payload, options);
+    return this.httpClient.post<UserModel>(url, payload, options);
   }
 
   getUser() {
