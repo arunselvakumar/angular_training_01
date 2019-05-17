@@ -13,7 +13,9 @@ export class StateDemoComponent implements OnInit {
 
   private currencyFormGroup: FormGroup;
 
-  constructor(private readonly store: Store<AppState>, private readonly formBuilder: FormBuilder) { }
+  constructor(
+    private readonly store: Store<AppState>,
+    private readonly formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.currencyFormGroup = this.formBuilder.group({

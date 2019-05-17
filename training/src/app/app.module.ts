@@ -16,6 +16,7 @@ import { DataDrivenFormsComponent } from './components/data-driven-forms/data-dr
 import { StateDemoComponent } from './components/state-demo/state-demo.component';
 import {StoreModule} from '@ngrx/store';
 import {addCoinReducer} from './state/blockchain.reducer';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {addCoinReducer} from './state/blockchain.reducer';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    StoreModule.forRoot({blockChain: addCoinReducer})
+    StoreModule.forRoot({blockChain: addCoinReducer}),
+    StoreDevtoolsModule.instrument({maxAge: 10})
   ],
   providers: [],
   bootstrap: [AppComponent]
