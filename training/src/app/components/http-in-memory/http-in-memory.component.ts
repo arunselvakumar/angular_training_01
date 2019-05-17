@@ -20,12 +20,12 @@ export class HttpInMemoryComponent implements OnInit {
   constructor(private readonly formBuilder: FormBuilder, private readonly userService: UserService) { }
 
   ngOnInit() {
+    this.users$ = this.userService.getUser();
+
     this.currencyFormGroup = this.formBuilder.group({
       name: new FormControl(''),
       designation: new FormControl('')
     });
-
-    this.users$ = this.userService.getUser();
   }
 
   onSubmit() {
