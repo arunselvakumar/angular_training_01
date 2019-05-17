@@ -32,6 +32,9 @@ import {BookStoreComponent} from './components/book-store/book-store.component';
     StoreDevtoolsModule.instrument({maxAge: 10}),
     InMemoryWebApiModule.forRoot(TestData)
   ],
-  providers: []
+  providers: [],
+  exports: [    BookStoreListComponent,
+    BookDetailsComponent,
+    VoterComponent]
 })
 export class ChildModule { }
