@@ -22,14 +22,12 @@ import { HttpInMemoryComponent } from './components/http-in-memory/http-in-memor
 import {HttpClientModule} from '@angular/common/http';
 import {InMemoryDbService, InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TestData} from './test-data-api';
+import {ChildModule} from './child.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookStoreComponent,
-    BookStoreListComponent,
-    BookDetailsComponent,
-    VoterComponent,
     BackgroundColorDirective,
     CreditCardDirective,
     FormComponent,
@@ -39,6 +37,7 @@ import {TestData} from './test-data-api';
     HttpInMemoryComponent
   ],
   imports: [
+    ChildModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
