@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../state/app.state';
+import {BlockchainModel} from '../../models/blockchain.model';
 
 @Component({
   selector: 'app-state-demo',
@@ -10,7 +13,7 @@ export class StateDemoComponent implements OnInit {
 
   private currencyFormGroup: FormGroup;
 
-  constructor() { }
+  constructor(private readonly store: Store<AppState>) { }
 
   ngOnInit() {
     this.currencyFormGroup = new FormGroup({
@@ -21,7 +24,7 @@ export class StateDemoComponent implements OnInit {
 
   onSubmit() {
     if (this.currencyFormGroup.valid) {
-      console.log(this.currencyFormGroup.value);
+      this.store.dispatch({ type: 'ADD_COIN', payload: this.currencyFormGroup.value });
     }
   }
 
