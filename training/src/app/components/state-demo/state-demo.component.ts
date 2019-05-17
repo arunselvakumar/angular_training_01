@@ -20,7 +20,9 @@ export class StateDemoComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.currencyFormGroup.value);
+    if (this.currencyFormGroup.valid) {
+      console.log(this.currencyFormGroup.value);
+    }
   }
 
 }
