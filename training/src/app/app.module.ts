@@ -13,6 +13,7 @@ import { CreditCardDirective } from './directives/credit-card/credit-card.direct
 import { FormComponent } from './components/form/form.component';
 import {HttpModule} from '@angular/http';
 import { DataDrivenFormsComponent } from './components/data-driven-forms/data-driven-forms.component';
+import { StateDemoComponent } from './components/state-demo/state-demo.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DataDrivenFormsComponent } from './components/data-driven-forms/data-dr
     BackgroundColorDirective,
     CreditCardDirective,
     FormComponent,
-    DataDrivenFormsComponent
+    DataDrivenFormsComponent,
+    StateDemoComponent
   ],
   imports: [
     BrowserModule,
