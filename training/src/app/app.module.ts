@@ -28,7 +28,6 @@ import {ChildModule} from './child.module';
   declarations: [
     AppComponent,
     BookStoreComponent,
-    BackgroundColorDirective,
     CreditCardDirective,
     FormComponent,
     DataDrivenFormsComponent,
@@ -49,6 +48,7 @@ import {ChildModule} from './child.module';
     InMemoryWebApiModule.forRoot(TestData)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }

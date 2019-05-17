@@ -14,12 +14,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TestData} from './test-data-api';
 import {BookStoreComponent} from './components/book-store/book-store.component';
+import {BackgroundColorDirective} from './directives/background-color/background-color.directive';
 
 @NgModule({
   declarations: [
     BookStoreListComponent,
     BookDetailsComponent,
-    VoterComponent
+    VoterComponent,
+    BackgroundColorDirective
   ],
   imports: [
     BrowserModule,
@@ -33,8 +35,10 @@ import {BookStoreComponent} from './components/book-store/book-store.component';
     InMemoryWebApiModule.forRoot(TestData)
   ],
   providers: [],
-  exports: [    BookStoreListComponent,
+  exports: [
+    BookStoreListComponent,
     BookDetailsComponent,
-    VoterComponent]
+    VoterComponent
+  ]
 })
 export class ChildModule { }
