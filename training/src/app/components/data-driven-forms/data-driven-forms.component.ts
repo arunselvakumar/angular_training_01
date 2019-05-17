@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Form, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Form, FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-data-driven-forms',
@@ -20,6 +20,8 @@ export class DataDrivenFormsComponent implements OnInit {
 
   reservedTitles = ['Song of Ice and Fire', 'Winds of Winter'];
 
+  hobbies: FormArray;
+
   constructor() { }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class DataDrivenFormsComponent implements OnInit {
     this.author_name = new FormControl('', Validators.required);
     this.price = new FormControl('', Validators.required);
     this.email = new FormControl('', [Validators.required, Validators.email]);
+    this.hobbies = new FormArray([]);
   }
 
   initializeForm() {
@@ -39,7 +42,8 @@ export class DataDrivenFormsComponent implements OnInit {
       title: this.title,
       email: this.email,
       price: this.price,
-      author_name: this.author_name
+      author_name: this.author_name,
+      hobbies: this.hobbies
     });
   }
 
@@ -55,6 +59,11 @@ export class DataDrivenFormsComponent implements OnInit {
       console.log(this.formGroup.value);
       this.formGroup.reset();
     }
+  }
+
+  onAddHobby() {
+    const control = new FormControl('', Validators.required);
+    (<FormArray>this.formGroup.get('hobbies')).push(control);
   }
 
 }

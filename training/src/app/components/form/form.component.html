@@ -26,6 +26,19 @@
     <input type="text" class="form-control" id="name"  placeholder="Enter Author Name" formControlName="author_name">
   </div>
 
+  <div formArrayName="hobbies">
+    <h4>Your Hobbies</h4>
+    <button
+      class="btn btn-default"
+      type="button"
+      (click)="onAddHobby()">Add Hobby</button>
+    <div
+      class="form-group"
+      *ngFor="let hobbyControl of formGroup.get('hobbies').controls; let i = index">
+      <input type="text" class="form-control" [formControlName]="i">
+    </div>
+  </div>
+
   <button class="btn btn-success">Submit</button>
 </form>
 
