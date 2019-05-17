@@ -18,6 +18,8 @@ import {StoreModule} from '@ngrx/store';
 import {addCoinReducer} from './state/blockchain.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import { CoinsDisplayComponent } from './components/coins-display/coins-display.component';
+import { HttpInMemoryComponent } from './components/http-in-memory/http-in-memory.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { CoinsDisplayComponent } from './components/coins-display/coins-display.
     FormComponent,
     DataDrivenFormsComponent,
     StateDemoComponent,
-    CoinsDisplayComponent
+    CoinsDisplayComponent,
+    HttpInMemoryComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { CoinsDisplayComponent } from './components/coins-display/coins-display.
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     StoreModule.forRoot({blockChain: addCoinReducer}),
     StoreDevtoolsModule.instrument({maxAge: 10})
   ],
