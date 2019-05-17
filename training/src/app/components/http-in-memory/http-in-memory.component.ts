@@ -3,6 +3,7 @@ import {BookStoreDbService} from '../../services/book-store-db.service';
 import {FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../state/app.state';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-http-in-memory',
@@ -13,13 +14,15 @@ export class HttpInMemoryComponent implements OnInit {
 
   private currencyFormGroup: FormGroup;
 
-  constructor(private readonly formBuilder: FormBuilder) { }
+  constructor(private readonly formBuilder: FormBuilder, private readonly userService: UserService) { }
 
   ngOnInit() {
     this.currencyFormGroup = this.formBuilder.group({
       name: new FormControl(''),
       designation: new FormControl('')
     });
+
+    this.userService.getUser().subscribe(console.log);
   }
 
   onSubmit() {

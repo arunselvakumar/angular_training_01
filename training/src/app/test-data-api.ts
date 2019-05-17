@@ -3,10 +3,12 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class TestData implements InMemoryDbService {
   createDb() {
-    let userDetails = [
-      new UserModel( 'Arun', 'SSE')
+    const users = [
+      new UserModel( 'Arun', 'SSE'),
+      new UserModel( 'Selva', 'SSE'),
+      new UserModel( 'Kumar', 'SSE'),
     ];
 
-    return { userDetails: userDetails };
+    return { users: users };
   }
 }
