@@ -20,6 +20,8 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import { CoinsDisplayComponent } from './components/coins-display/coins-display.component';
 import { HttpInMemoryComponent } from './components/http-in-memory/http-in-memory.component';
 import {HttpClientModule} from '@angular/common/http';
+import {InMemoryDbService, InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {TestData} from './test-data-api';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import {HttpClientModule} from '@angular/common/http';
     HttpModule,
     HttpClientModule,
     StoreModule.forRoot({blockChain: addCoinReducer}),
-    StoreDevtoolsModule.instrument({maxAge: 10})
+    StoreDevtoolsModule.instrument({maxAge: 10}),
+    InMemoryWebApiModule.forRoot(TestData)
   ],
   providers: [],
   bootstrap: [AppComponent]
