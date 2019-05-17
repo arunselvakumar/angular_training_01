@@ -14,6 +14,8 @@ import { FormComponent } from './components/form/form.component';
 import {HttpModule} from '@angular/http';
 import { DataDrivenFormsComponent } from './components/data-driven-forms/data-driven-forms.component';
 import { StateDemoComponent } from './components/state-demo/state-demo.component';
+import {StoreModule} from '@ngrx/store';
+import {addCoinReducer} from './state/blockchain.reducer';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { StateDemoComponent } from './components/state-demo/state-demo.component
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    StoreModule.forRoot({blockChain: addCoinReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
