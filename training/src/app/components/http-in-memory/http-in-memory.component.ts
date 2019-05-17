@@ -13,21 +13,18 @@ export class HttpInMemoryComponent implements OnInit {
 
   private currencyFormGroup: FormGroup;
 
-  constructor(
-    private readonly store: Store<AppState>,
-    private readonly formBuilder: FormBuilder) { }
+  constructor(private readonly formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.currencyFormGroup = this.formBuilder.group({
       name: new FormControl(''),
-      value: new FormControl('')
+      designation: new FormControl('')
     });
   }
 
   onSubmit() {
     if (this.currencyFormGroup.valid) {
       console.log(this.currencyFormGroup.value);
-      this.store.dispatch({ type: 'ADD_COIN', payload: this.currencyFormGroup.value });
     }
   }
 }
