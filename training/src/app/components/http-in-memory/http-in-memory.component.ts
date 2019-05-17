@@ -4,6 +4,8 @@ import {FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators} from
 import {Store} from '@ngrx/store';
 import {AppState} from '../../state/app.state';
 import {UserService} from '../../services/user.service';
+import {UserModel} from '../../models/user.model';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-http-in-memory',
@@ -13,6 +15,7 @@ import {UserService} from '../../services/user.service';
 export class HttpInMemoryComponent implements OnInit {
 
   private currencyFormGroup: FormGroup;
+  private users$: Observable<UserModel>;
 
   constructor(private readonly formBuilder: FormBuilder, private readonly userService: UserService) { }
 
@@ -22,7 +25,7 @@ export class HttpInMemoryComponent implements OnInit {
       designation: new FormControl('')
     });
 
-    this.userService.getUser().subscribe(console.log);
+    this.users$ = this.userService.getUser();
   }
 
   onSubmit() {
