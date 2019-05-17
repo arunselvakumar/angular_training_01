@@ -18,6 +18,8 @@ export class DataDrivenFormsComponent implements OnInit {
 
   author_name: FormControl;
 
+  reservedTitles = ['Song of Ice and Fire', 'Winds of Winter'];
+
   constructor() { }
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class DataDrivenFormsComponent implements OnInit {
   }
 
   initializeFormControls() {
-    this.title = new FormControl('', [Validators.required, Validators.maxLength(5)]);
+    this.title = new FormControl('', [Validators.required, this.validateReservedTitles.bind(this)]);
     this.author_name = new FormControl('', Validators.required);
     this.price = new FormControl('', Validators.required);
     this.email = new FormControl('', [Validators.required, Validators.email]);
@@ -39,6 +41,13 @@ export class DataDrivenFormsComponent implements OnInit {
       price: this.price,
       author_name: this.author_name
     });
+  }
+
+  validateReservedTitles(control: FormControl): {[s: string]: boolean} {
+    if (this.reservedTitles.indexOf(control.value) !== -1) {
+      return {'reservedTitle': true};
+    }
+    return null;
   }
 
   onSubmit() {

@@ -1,6 +1,7 @@
 
 <form autocomplete="off" novalidate [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <div class="form-group" [ngClass]="{ 'has-danger': title.invalid && title.dirty, 'has-success': title.valid && title.dirty }">
+    <span *ngIf="formGroup.get('title').errors['reservedTitle']">Reserved Title Custom Error</span>
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" placeholder="Enter book title" formControlName="title">
   </div>
