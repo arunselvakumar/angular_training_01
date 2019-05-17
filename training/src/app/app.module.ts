@@ -17,6 +17,7 @@ import { StateDemoComponent } from './components/state-demo/state-demo.component
 import {StoreModule} from '@ngrx/store';
 import {addCoinReducer} from './state/blockchain.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { CoinsDisplayComponent } from './components/coins-display/coins-display.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
     CreditCardDirective,
     FormComponent,
     DataDrivenFormsComponent,
-    StateDemoComponent
+    StateDemoComponent,
+    CoinsDisplayComponent
   ],
   imports: [
     BrowserModule,
