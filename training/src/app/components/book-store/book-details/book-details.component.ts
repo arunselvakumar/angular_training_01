@@ -13,9 +13,16 @@ export class BookDetailsComponent implements OnInit {
   @Output()
   eventHandler = new EventEmitter();
 
+  items: ItemModel[]
+
   constructor() { }
 
   ngOnInit() {
+    this.items = [
+      {id: '1', name: 'Arun'},
+      {id: '2', name: 'Selva'},
+      {id: '3', name: 'Kumar'},
+    ];
   }
 
   callme() {
@@ -23,4 +30,9 @@ export class BookDetailsComponent implements OnInit {
     this.eventHandler.emit({currentValue: 'clicked'});
   }
 
+}
+
+export interface ItemModel {
+  id: string;
+  name: string;
 }

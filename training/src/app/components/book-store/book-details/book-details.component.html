@@ -1,6 +1,7 @@
-<p>
-  book-details works!
-  {{mydata}}
-</p>
+<div *ngFor="let item of items">
+  <div *ngIf="item.id"> {{item.name}} </div>
+</div>
 
-<button (click)="callme()">Click Me</button>
+<ng-container *ngFor="let item of items">
+  <div *ngIf="item.id"> {{item.name}} </div>
+</ng-container>

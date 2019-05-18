@@ -23,6 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {InMemoryDbService, InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TestData} from './test-data-api';
 import {ChildModule} from './child.module';
+import { ContentProjectionDemoComponent } from './components/content-projection-demo/content-projection-demo.component';
+import { ProjectionChildComponent } from './components/content-projection-demo/projection-child/projection-child.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {ChildModule} from './child.module';
     DataDrivenFormsComponent,
     StateDemoComponent,
     CoinsDisplayComponent,
-    HttpInMemoryComponent
+    HttpInMemoryComponent,
+    ContentProjectionDemoComponent,
+    ProjectionChildComponent
   ],
   imports: [
     ChildModule,
