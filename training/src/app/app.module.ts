@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +39,10 @@ import { ArtistAlbumListComponent } from './components/day-05/artist-album-list/
 import { ArtistVideoListComponent } from './components/day-05/artist-video-list/artist-video-list.component';
 import { ArtistComponent } from './components/day-05/artist/artist.component';
 import {RouterModule, Routes} from '@angular/router';
+import {UnsearchTermGuard} from './guards/unsearch-term.guard';
+import {LoggedInUserGuard} from './guards/logged-in-user.guard';
+import {ChildrenAuthGuard} from './guards/children-auth.guard';
+import {GlobalErrorHandler} from './error-handler/global-error-handler';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -48,6 +52,8 @@ const routes: Routes = [
   {
     path: "artist/:artistId",
     component: ArtistComponent,
+    canActivate: [LoggedInUserGuard],
+    canActivateChild: [ChildrenAuthGuard],
     children: [
       { path: "", redirectTo: "tracks", pathMatch: "full" },
       { path: "tracks", component: ArtistTrackListComponent },
@@ -96,7 +102,12 @@ const routes: Routes = [
     InMemoryWebApiModule.forRoot(TestData),
     RouterModule.forRoot(routes, {useHash: true})
   ],
-  providers: [],
+  providers: [
+    UnsearchTermGuard,
+    ChildrenAuthGuard,
+    LoggedInUserGuard,
+    {provide: ErrorHandler, useClass: GlobalErrorHandler}
+  ],
   bootstrap: [AppComponent],
   exports: []
 })

@@ -9,6 +9,10 @@ export class UserService {
 
   constructor(private readonly httpClient: HttpClient) { }
 
+  isloggedIn() {
+    return false;
+  }
+
   createUser(payload: UserModel) {
     const url = 'api/users';
     const httpHeaders = new HttpHeaders()
