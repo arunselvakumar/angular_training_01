@@ -9,7 +9,7 @@ import {BookModel} from '../../../models/book.model';
 })
 export class BookStoreListComponent implements OnInit {
 
-  private bookList: BookModel[];
+  bookList: BookModel[];
 
   constructor(private readonly bookStoreService: BookStoreService) { }
 
